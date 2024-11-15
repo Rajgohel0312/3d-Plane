@@ -1,0 +1,234 @@
+/* Import the Poppins font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DynaPuff", system-ui;
+
+  color: #000000;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: skyblue; /* Background color */
+  z-index: -1; /* Ensure the background is behind content */
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://unsplash.com/photos/IM8ZyYaSW6g/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzMxNjczMjkxfA&force=true")
+    no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.7; /* Adjust opacity of the image */
+  z-index: -2; /* Make sure the image stays behind content */
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  height: 100%;
+  z-index: 1; /* Make sure the canvas is on top of the text */
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  margin-top: 12px;
+}
+.navbar .nav-lists {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.nav-lists .nav-items {
+  text-decoration: none;
+  color: #000;
+  font-weight: 300;
+}
+.logo {
+  font-size: 1.8rem;
+  color: blue;
+}
+
+.container-plane {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  position: relative; /* Needed for text positioning */
+}
+
+.hero-sec {
+  position: absolute; /* Ensure the text is placed relative to the container */
+  z-index: 0; /* Place the text behind the canvas */
+  text-align: center;
+}
+.hero-sec .title {
+  font-size: 9rem;
+}
+.about-sec .title {
+  font-size: 8rem;
+}
+.title {
+  margin-bottom: 20px;
+  color: transparent; /* Make text transparent so the background is visible */
+  background: linear-gradient(
+    to bottom,
+    #000000,
+    #ffffff3c
+  ); /* Gradient from top to bottom */
+  -webkit-background-clip: text; /* Safari support */
+  background-clip: text; /* Standard support */
+  z-index: -1; /* Place the text behind the canvas */
+}
+
+.about-sec {
+  height: 100vh;
+  padding: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-about {
+  margin-bottom: 200px;
+  width: 60%;
+}
+.right-about {
+  margin-bottom: 200px;
+  width: 40%;
+}
+
+.right-about .about-subtitle {
+  color: blue;
+  font-weight: 800;
+  margin: 20px 0;
+  font-size: 1.8rem;
+  text-align: justify;
+}
+.right-about .about-para {
+  text-align: justify;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.features-sec {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+}
+.features-sec .title {
+  font-size: 6.3rem;
+  font-weight: 700;
+}
+.features-sec .features-sub {
+  font-size: 1.3rem;
+  color: blue;
+  margin: 10px 0;
+  font-weight: bold;
+}
+.features-sec ul {
+  width: 500px;
+  list-style: square;
+}
+.features-sec ul li {
+  margin: 10px 0;
+}
+
+.explore-sec {
+  z-index: 100;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #f0f0f0; */
+}
+
+.explore-sec h2 {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  color: black;
+}
+
+.explore-sec p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #555;
+}
+
+#exploreBtn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  font-family: "DynaPuff", system-ui;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  font-weight: 300;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+#exploreBtn:hover {
+  background-color: #0056b3;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 50px;
+  overflow: hidden;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+  gap: 20px;
+  text-align: center;
+}
+.closeBtn button {
+  background: #007bff;
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
